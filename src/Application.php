@@ -4,24 +4,9 @@ namespace HieuLe\FizzBuzz;
 
 class Application
 {
-    public function run() {
+    public function run()
+    {
         for ($i = 1; $i <= 100; $i++) {
-            if ($i % 3 == 0) {
-                echo "Fizz" . PHP_EOL;
-                continue;
-            }
-
-            if ($i % 3 == 0) {
-                echo "Fizz" . PHP_EOL;
-                continue;
-            }
-
-            if ($i % 3 == 0) {
-                echo "Fizz" . PHP_EOL;
-                continue;
-            }
-
-
             switch (0) {
                 case ($i % 15):
                     echo "FizzBuzz" . PHP_EOL;
