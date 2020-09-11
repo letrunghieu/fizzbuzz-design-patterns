@@ -1,21 +1,8 @@
-<?php declare(strict_type=1);
+<?php declare(strict_types=1);
 
-for ($i = 1; $i <= 100; $i++) {
-    switch (0) {
-        case ($i % 15):
-            echo "FizzBuzz" . PHP_EOL;
-            break;
+require_once "vendor/autoload.php";
 
-        case ($i % 5):
-            echo "Buzz" . PHP_EOL;
-            break;
+use HieuLe\FizzBuzz\Application;
 
-        case ($i % 3):
-            echo "Fizz" . PHP_EOL;
-            break;
-
-        default:
-            echo $i . PHP_EOL;
-            break;
-    }
-}
+$application = new Application();
+$application->run();

@@ -1,0 +1,19 @@
+{
+  "name": "hieule/fizzbuzz",
+  "description": "FizzBuzz application with design patterns",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Hieu Le",
+      "email": "letrunghieu.cse09@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "HieuLe\\FizzBuzz\\": "src"
+    }
+  }
+}
