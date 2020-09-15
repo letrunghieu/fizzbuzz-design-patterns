@@ -12,15 +12,24 @@ class Application
 {
     public function run()
     {
-        $handler = new DefaultStepHandler([
-            new FizzBuzzStrategy(),
-            new FizzStrategy(),
-            new BuzzStrategy(),
-            new NumberStrategy()
-        ]);
-
         for ($i = 1; $i <= 100; $i++) {
-            $handler->handle($i);
+            switch (0) {
+                case ($i % 15):
+                    echo "FizzBuzz" . PHP_EOL;
+                    break;
+
+                case ($i % 5):
+                    echo "Buzz" . PHP_EOL;
+                    break;
+
+                case ($i % 3):
+                    echo "Fizz" . PHP_EOL;
+                    break;
+
+                default:
+                    echo $i . PHP_EOL;
+                    break;
+            }
         }
     }
 }
