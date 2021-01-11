@@ -9,9 +9,9 @@ class FizzBuzzStrategyFactoryBuilder
     private int $fizzNumber = 3;
     private int $buzzNumber = 5;
 
-    private static self $instance;
+    private static ?self $instance;
     public static function getInstance() :FizzBuzzStrategyFactoryBuilder {
-        if (self::$instance == null) {
+        if (self::$instance === null) {
             self::$instance = new self();
         }
 

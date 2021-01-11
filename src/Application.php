@@ -13,9 +13,7 @@ class Application
 {
     public function run()
     {
-        $strategyFactoryBuilder= FizzBuzzStrategyFactoryBuilder::getInstance();
-        $strategyFactoryBuilder->setFizzNumber(5)
-            ->setBuzzNumber(7);
+        $strategyFactoryBuilder= new FizzBuzzStrategyFactoryBuilder();
 
         $strategyFactory = $strategyFactoryBuilder->build();
 
@@ -26,8 +24,10 @@ class Application
             new DefaultStrategy()
         ]);
 
-        for ($i = 1; $i <= 100; $i++) {
-            $strategyHandler->handle($i);
+        $numberIterator = new NumberIterator(1, 100);
+        while ($numberIterator->hasNext()) {
+            $strategyHandler->handle($numberIterator->current());
+            $numberIterator->next();
         }
     }
 }
