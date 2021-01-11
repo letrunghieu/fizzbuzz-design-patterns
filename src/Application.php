@@ -1,33 +1,27 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types = 1);
 
 namespace HieuLe\FizzBuzz;
 
-use HieuLe\FizzBuzz\Factories\FizzBuzzStrategyFactory;
-use HieuLe\FizzBuzz\Factories\FizzBuzzStrategyFactoryBuilder;
-use HieuLe\FizzBuzz\Strategies\BuzzStrategy;
-use HieuLe\FizzBuzz\Strategies\DefaultStrategy;
-use HieuLe\FizzBuzz\Strategies\FizzBuzzStrategy;
-use HieuLe\FizzBuzz\Strategies\FizzStrategy;
+use HieuLe\FizzBuzz\Factories\NodeFactory;
+use HieuLe\FizzBuzz\Iterators\VisitorNodeIterator;
+use HieuLe\FizzBuzz\Visitor\StdOutVisitor;
 
 class Application
 {
     public function run()
     {
-        $strategyFactoryBuilder= new FizzBuzzStrategyFactoryBuilder();
+        $visitor = new StdOutVisitor();
 
-        $strategyFactory = $strategyFactoryBuilder->build();
+        $iterator = new VisitorNodeIterator(
+            new NodeFactory(3, 5),
+            1,
+            100
+        );
 
-        $strategyHandler = new StrategyHandler([
-            $strategyFactory->createFizzBuzzStrategy(),
-            $strategyFactory->createFizzStrategy(),
-            $strategyFactory->createBuzzStrategy(),
-            new DefaultStrategy()
-        ]);
-
-        $numberIterator = new NumberIterator(1, 100);
-        while ($numberIterator->hasNext()) {
-            $strategyHandler->handle($numberIterator->current());
-            $numberIterator->next();
+        while ($iterator->hasNext())
+        {
+            $iterator->current()->accept($visitor);
+            $iterator->next();
         }
     }
 }
