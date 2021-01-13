@@ -3,11 +3,9 @@
 namespace HieuLe\FizzBuzz;
 
 use HieuLe\FizzBuzz\Bridges\BridgeRunner;
+use HieuLe\FizzBuzz\Bridges\ValueIterators\ExternalValueIterator;
 use HieuLe\FizzBuzz\Bridges\ValueIterators\InternalValueIterator;
 use HieuLe\FizzBuzz\Bridges\Writers\EchoWriter;
-use HieuLe\FizzBuzz\Observers\CountingPublisher;
-use HieuLe\FizzBuzz\Observers\Subscribers\FizzBuzSubscriber;
-use HieuLe\FizzBuzz\Observers\Subscribers\NewLineSubscriber;
 
 class Application
 {
