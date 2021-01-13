@@ -2,6 +2,9 @@
 
 namespace HieuLe\FizzBuzz;
 
+use HieuLe\FizzBuzz\Bridges\BridgeRunner;
+use HieuLe\FizzBuzz\Bridges\ValueIterators\InternalValueIterator;
+use HieuLe\FizzBuzz\Bridges\Writers\EchoWriter;
 use HieuLe\FizzBuzz\Observers\CountingPublisher;
 use HieuLe\FizzBuzz\Observers\Subscribers\FizzBuzSubscriber;
 use HieuLe\FizzBuzz\Observers\Subscribers\NewLineSubscriber;
@@ -10,13 +13,11 @@ class Application
 {
     public function run()
     {
-        $publisher = new CountingPublisher();
+        $runner = new BridgeRunner(
+            new InternalValueIterator(1, 100),
+            new EchoWriter()
+        );
 
-        $publisher->subscribe(new FizzBuzSubscriber(3, 5));
-        $publisher->subscribe(new NewLineSubscriber());
-
-        for ($i = 1; $i <= 100; $i++) {
-            $publisher->update($i);
-        }
+        $runner->run();
     }
 }

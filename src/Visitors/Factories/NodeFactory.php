@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace HieuLe\FizzBuzz\Factories;
+namespace HieuLe\FizzBuzz\Visitors\Factories;
 
 use HieuLe\FizzBuzz\Visitors\Nodes\BuzzNode;
 use HieuLe\FizzBuzz\Visitors\Nodes\FizzBuzzNode;

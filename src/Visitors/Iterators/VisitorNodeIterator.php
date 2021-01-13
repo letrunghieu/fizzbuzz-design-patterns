@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace HieuLe\FizzBuzz\Iterators;
+namespace HieuLe\FizzBuzz\Visitors\Iterators;
 
-use HieuLe\FizzBuzz\Factories\NodeFactory;
+use HieuLe\FizzBuzz\Visitors\Factories\NodeFactory;
 use HieuLe\FizzBuzz\Visitors\Nodes\NodeInterface;
 
 class VisitorNodeIterator
