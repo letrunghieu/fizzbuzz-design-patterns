@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types = 1);
 
 namespace HieuLe\FizzBuzzTest;
 
@@ -7,8 +7,13 @@ use PHPUnit\Framework\TestCase;
 
 class ApplicationTest extends TestCase
 {
-    public function testApplicationOutput(): void
+    /**
+     * @dataProvider provideApplicationData
+     */
+    public function testApplicationOutput(string $pattern): void
     {
+        $_SERVER['argv'][1] = $pattern;
+
         $application = new Application();
         ob_start();
         $application->run();
@@ -18,6 +23,15 @@ class ApplicationTest extends TestCase
             $this->getExpectedOutput(),
             $output
         );
+    }
+
+    public function provideApplicationData(): array
+    {
+        return [
+            'Visitor' => ['visitor'],
+            'Observer' => ['observer'],
+            'Bridge (with simple implementations)' => ['simple-bridge'],
+        ];
     }
 
     private function getExpectedOutput(): string

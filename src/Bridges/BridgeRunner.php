@@ -4,8 +4,9 @@ namespace HieuLe\FizzBuzz\Bridges;
 
 use HieuLe\FizzBuzz\Bridges\ValueIterators\ValueIteratorInterface;
 use HieuLe\FizzBuzz\Bridges\Writers\WriterInterface;
+use HieuLe\FizzBuzz\Runners\RunnerInterface;
 
-class BridgeRunner
+class BridgeRunner implements RunnerInterface
 {
     private const FIZZ_NUMBER = 3;
     private const BUZZ_NUMBER = 5;
@@ -25,7 +26,7 @@ class BridgeRunner
         $this->writer = $writer;
     }
 
-    public function run()
+    public function run(): void
     {
         while ($this->iterator->hasNext()) {
             $value = $this->iterator->current();
