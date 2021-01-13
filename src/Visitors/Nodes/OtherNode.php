@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace HieuLe\FizzBuzz\Visitor\Node;
+namespace HieuLe\FizzBuzz\Visitors\Nodes;
 
-use HieuLe\FizzBuzz\Visitor\VisitorInterface;
+use HieuLe\FizzBuzz\Visitors\VisitorInterface;
 
 class OtherNode extends AbstractNode
 {

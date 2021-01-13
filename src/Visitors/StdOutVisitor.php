@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace HieuLe\FizzBuzz\Visitor;
+namespace HieuLe\FizzBuzz\Visitors;
 
-use HieuLe\FizzBuzz\Visitor\Node\BuzzNode;
-use HieuLe\FizzBuzz\Visitor\Node\FizzBuzzNode;
-use HieuLe\FizzBuzz\Visitor\Node\FizzNode;
-use HieuLe\FizzBuzz\Visitor\Node\OtherNode;
+use HieuLe\FizzBuzz\Visitors\Nodes\BuzzNode;
+use HieuLe\FizzBuzz\Visitors\Nodes\FizzBuzzNode;
+use HieuLe\FizzBuzz\Visitors\Nodes\FizzNode;
+use HieuLe\FizzBuzz\Visitors\Nodes\OtherNode;
 
 class StdOutVisitor implements VisitorInterface
 {

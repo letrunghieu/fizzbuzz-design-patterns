@@ -3,7 +3,7 @@
 namespace HieuLe\FizzBuzz\Iterators;
 
 use HieuLe\FizzBuzz\Factories\NodeFactory;
-use HieuLe\FizzBuzz\Visitor\Node\NodeInterface;
+use HieuLe\FizzBuzz\Visitors\Nodes\NodeInterface;
 
 class VisitorNodeIterator
 {

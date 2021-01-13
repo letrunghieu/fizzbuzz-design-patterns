@@ -4,7 +4,7 @@ namespace HieuLe\FizzBuzz;
 
 use HieuLe\FizzBuzz\Factories\NodeFactory;
 use HieuLe\FizzBuzz\Iterators\VisitorNodeIterator;
-use HieuLe\FizzBuzz\Visitor\StdOutVisitor;
+use HieuLe\FizzBuzz\Visitors\StdOutVisitor;
 
 class Application
 {

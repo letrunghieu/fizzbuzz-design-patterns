@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace HieuLe\FizzBuzz\Visitor\Node;
+namespace HieuLe\FizzBuzz\Visitors\Nodes;
 
 abstract class AbstractNode implements NodeInterface
 {
