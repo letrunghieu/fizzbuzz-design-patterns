@@ -2,26 +2,21 @@
 
 namespace HieuLe\FizzBuzz;
 
-use HieuLe\FizzBuzz\Factories\NodeFactory;
-use HieuLe\FizzBuzz\Iterators\VisitorNodeIterator;
-use HieuLe\FizzBuzz\Visitors\StdOutVisitor;
+use HieuLe\FizzBuzz\Observers\CountingPublisher;
+use HieuLe\FizzBuzz\Observers\Subscribers\FizzBuzSubscriber;
+use HieuLe\FizzBuzz\Observers\Subscribers\NewLineSubscriber;
 
 class Application
 {
     public function run()
     {
-        $visitor = new StdOutVisitor();
+        $publisher = new CountingPublisher();
 
-        $iterator = new VisitorNodeIterator(
-            new NodeFactory(3, 5),
-            1,
-            100
-        );
+        $publisher->subscribe(new FizzBuzSubscriber(3, 5));
+        $publisher->subscribe(new NewLineSubscriber());
 
-        while ($iterator->hasNext())
-        {
-            $iterator->current()->accept($visitor);
-            $iterator->next();
+        for ($i = 1; $i <= 100; $i++) {
+            $publisher->update($i);
         }
     }
 }
