@@ -11,3 +11,14 @@ For numbers 1 through 100,
 * if the number is divisible by 5 print Buzz;
 * if the number is divisible by 3 and 5 (15) print FizzBuzz;
 * else, print the number.
+
+
+## Run the program
+
+
+```sh
+composer install
+
+# <pattern> is one of these values: observer, visitor, simple-bridge or robust-bridge
+php console.php <pattern>
+```
